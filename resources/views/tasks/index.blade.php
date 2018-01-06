@@ -29,7 +29,10 @@
                           <tr>
                             <td>{{ $v->title }}</td>
                             <td>{{ $v->description }}</td>
-                            <td>Edit | Delete</td>
+                            <td>{{ link_to_route('tasks.edit','Edit Task',[$v->id],['class'=>'btn btn-success']) }} 
+                                | 
+                                Delete
+                            </td>
                           </tr>
                           @endforeach
                         </tbody>
@@ -39,8 +42,8 @@
                 </div>
             </div>
 
-           {{--  {{ link_to_route('tasks.create','Add Task',null,['class'=>'btn btn-primary']) }} --}}
-           <a href="{{ url('tasks/create') }}" class="btn btn-primary">Add New Task</a>
+            {{ link_to_route('tasks.create','Add New Task',null,['class'=>'btn btn-primary']) }}
+           {{-- <a href="{{ url('tasks/create') }}" class="btn btn-primary">Add New Task</a> --}}
 
         </div>
     </div>
